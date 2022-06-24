@@ -1,0 +1,203 @@
+/* 
+The comments here attempt to explain the implementations of spritesheet animations in Danger Crew.
+
+We'll utilize a dynamic "pixel size" which will allow us to upscale the pixel art in even multiplications.
+EX: if an asset is designed as a 10px by 10px square, we can multiply by pixel size of 4 to enlarge the asset to 40px by 40px. This value can be adjusted per screen real estate. 
+*/
+
+:root {
+    --pixel-size: 4; /* Try playing with this value! */
+  }
+  
+  
+  /* 
+     Allow pixel art images and canvas tags to scale up without losing quality
+  */
+  .PixelArtImage {
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+  }
+  
+  
+  /* 
+      This is the square crop of the character, each frame designed at natural size 32x32. 
+      Multiplied by dynamic pixel size.
+  */
+  .Character {
+      width: calc(var(--pixel-size) * 32px);
+      height: calc(var(--pixel-size) * 32px);
+      overflow: hidden;
+      position: relative;
+      margin: calc(var(--pixel-size) * 6px) auto;
+  }
+  .Character_shadow {
+      width: calc(var(--pixel-size) * 32px);
+      height: calc(var(--pixel-size) * 32px);
+      opacity: 0.25;
+      position: absolute;
+  }
+  
+  /* Set up a CSS Animation to move our spritesheet to the LEFT. */
+  @keyframes walkAnimation {
+    from {
+      transform: translate3d(0%,0%,0);
+    }
+    to {
+      transform: translate3d(-100%,0%,0);
+    }
+  }
+  
+  /* 
+      One spritesheet containing layout of 4 by 4 frames, each designed at 32x32.
+      Total width = 128px multiplied by dynamic pixel size.
+      The visible part is cropped out via .Character's overflow:hidden rule. This image lives *inside* the .Character container.
+  */
+  .Character_sprite-sheet {
+      width: calc(var(--pixel-size) * 128px);
+      animation: walkAnimation 0.6s steps(4) infinite; 
+     /* ^ "Complete the animation in 4 distinct steps". We use 4 because each row of the spritesheet has 4 frames. */
+      position: absolute;
+      top:0;
+      left:0;
+     
+      display: none; /* For the sake of this demo, JS will control which character spritesheet is visible */
+  }
+  .Character_sprite-sheet.active {
+      display: block;
+  }
+  
+  /* 
+      Set up classes that change the y position of underlying spritesheet.
+      Spritesheet is designed with this layout:
+          D1 D2 D3 D4
+          R1 R2 R3 R4 (32px away from top)
+          U1 U2 U3 U4 (64px away from top)
+          L1 L2 L3 L4 (96px away from top)
+  
+     EX: https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/WalkingDemo-HANK-2-SHEET.png
+  */
+  
+  .Character--walk-down .Character_sprite-sheet {
+      top: 0;
+  }
+  .Character--walk-right .Character_sprite-sheet {
+      top: calc(var(--pixel-size) * -32px);
+  }
+  .Character--walk-up .Character_sprite-sheet {
+      top: calc(var(--pixel-size) * -64px);
+  }
+  .Character--walk-left .Character_sprite-sheet {
+      top: calc(var(--pixel-size) * -96px);
+  }
+  
+  
+  /* Demo UI Stuff ------------------------------------------------- */
+  * {
+      box-sizing: border-box;
+  }
+  
+  .Container {
+      max-width: calc(var(--pixel-size) * 100px);
+      margin: 0 auto;
+  }
+  .TitleImage {
+      width: calc(var(--pixel-size) * 95px);
+      display: block;
+      margin: 0 auto;
+  }
+  .NavigationBubble {
+      -webkit-appearance: none;
+      width: calc(var(--pixel-size) * 3px);
+      height: calc(var(--pixel-size) * 3px);
+      background: #2497cc;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      padding:0;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      box-sizing:content-box;
+  }
+  .NavigationBubble:hover:not(.active) {
+      opacity: 0.9;
+  }
+  .NavigationBubble.active {
+      background: #fff;
+  }
+  .NextSpritesheetButton {
+      -webkit-appearance: none;
+      border:0;
+      background:none;
+      padding: 1em;
+      position: absolute;
+      top: 50%;
+  }
+  .NextSpritesheetButton--prev {
+      left: 0;
+  }
+  .NextSpritesheetButton--next {
+      right: 0;
+  }
+  .NextSpritesheetButton:hover {
+      cursor: pointer;
+      background: rgba(255,255,255,0.2);
+  }
+  .NextSpritesheetButton:focus {
+      outline:none;
+  }
+  .NextSpritesheetButton svg {
+      display: block;
+      width: calc(var(--pixel-size) * 4px);
+  }
+  .DirectionArrow {
+      background: none;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+  }
+  .DirectionArrow svg {
+      display: block;
+      width: calc(var(--pixel-size) * 13px);
+  }
+  .DirectionArrow--active .Arrow_outline-top { stroke: #5268ec; }
+  .DirectionArrow--active .Arrow_surface { stroke: #639bff; }
+  .DirectionArrow--active .Arrow_outline-bottom { stroke: #164496; }
+  .DirectionArrow--active .Arrow_edge { stroke: #7baaff; }
+  .DirectionArrow--active .Arrow_front { stroke: #4c8bfd }
+  .DirectionArrow--active .Arrow_arrow-inset { stroke: #fff; }
+  .DirectionArrow--active .Arrow_arrow-body { stroke: #fff; }
+  .SpritesheetSlider {
+      position: relative;
+      margin-bottom: calc(var(--pixel-size) * 10px);	
+  }
+  .flex-center {
+      display:flex;
+      justify-content: center;
+  }
+  
+  footer {
+     margin-top: calc(var(--pixel-size) * 20px);
+  }
+  @media (min-height: 515px) {
+     footer {
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:0;
+     }
+  }
+  footer p {
+      color: #fff;
+      text-align: center;
+      padding: 0.8em;
+      font-size: 18px;
+     margin: 0;
+     border-top: 1px solid rgba(255,255,255,0.4)
+  }
+  footer a {
+      font-weight:bold;
+      font-size: 18px;
+      color: #164496;
+  }

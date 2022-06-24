@@ -1,0 +1,18 @@
+.Book-enter {
+    opacity: 0.01;
+    transform: scale(1.1);
+  }
+  .Book-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 300ms;
+  }
+  .Book-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .Book-exit-active {
+    opacity: 0.01;
+    transform: scale(1.1);
+    transition: all 300ms;
+  }

@@ -1,0 +1,1136 @@
+@font-face { font-family: VCR; src: url('VCR.ttf'); } 
+@font-face { font-family: KoHo; src: url("https://fonts.googleapis.com/css2?family=KoHo:wght@400&display=swap"); } 
+
+.App {
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding:  1em;
+  border-style: solid;
+  border-color: greenyellow;
+  border-width: 3px;
+  height: 90%;
+  font-family: 'KoHo';
+  font-size: medium;
+
+}
+
+.App2 {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  color: white;
+  padding:  20px;
+  margin: auto;
+  width: 100%;
+  height: 90%;
+  font-family: 'KoHo';
+  font-size: medium;
+  margin-top: 50px;
+
+}
+.Container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-color: bisque;
+  width: 100%;
+  height: 80%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-items: center;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+}
+.inventoryColumn {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-items: center;
+  align-items: center;
+  text-align: left;
+  margin: 5px;
+  padding: 5px;
+}
+.artifact {
+  height: 70px;
+  width: 200px;
+  padding: 40px;
+  margin: auto;
+  display: flex;
+  align-self: center;
+}
+.profilePic {
+  display: flex;
+  align-self: initial;
+  height: 100%;
+  width: 30%;
+}
+.profilePicBook {
+  height: 80%;
+  width: 30%;
+  border-style: solid;
+  width: 2px;
+}
+
+.infoUi {
+  height: 150px;
+  width: 150px;
+  display: flex;
+
+}
+
+
+.infoUi2 {
+  display: flex;
+  background-image: url("./p_land_images/ui.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: 'KoHo';
+  font-size: small;
+  color: gold;
+  justify-content: center;
+  background-position-y: center;
+  background-position-x: center;
+  text-align: start;
+  padding: 10px;
+ 
+}
+.mask{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 200px;
+  width: 250px;
+}
+.spec {
+  height: 50px;
+  width: 50px;
+}
+
+.columnPicUi {
+
+  margin: auto;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+.rowSpecial {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-items: center;
+  flex-direction: row;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+.Book {
+  height: 400px;
+  width: 500px;
+  background-image: url("./p_land_images/book.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -30px;
+  background-position-y: center;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  overflow: hidden;
+  bottom: 50px;
+  margin-bottom: 50px;
+
+}
+.columnForm {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  align-self: center;
+  margin: auto;
+  background-image: url("./p_land_images/ui.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: center;
+  padding: 200px;
+}
+
+.columnForm > input {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  
+}
+.right {
+  position: absolute;
+  right: 40px;
+  color: black;
+  border: black;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+}
+.left {
+  position: absolute;
+  left: 30px;
+  color: black;
+  border: black;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+}
+.crafting {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.inventory {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 2px;
+  color: white;
+}
+.mainItemPic {
+  display: flex;
+  align-self: center;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-self: center;
+  padding: 5px;
+  margin:auto;
+}
+.recipeIcon {
+  display: flex;
+  align-self: center;
+  width: 60px;
+  height: 60px;
+
+  padding: 5px;
+}
+.centerpic {
+ display: flex;
+ align-self: center;
+  
+  
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.title {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  height: 100px;
+  width:200px;
+}
+.rowOfThree {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.Main{
+  text-align: center;
+  background: url("./p_land_images/map.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  background-position-x: center;
+  background-position-y: center;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  font-family: 'KoHo';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Main-Quests{
+  text-align: center;
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+  ),
+  url("map3-5.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  background-position-x: center;
+  background-position-y: center;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  overflow-y: auto;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  font-family: 'KoHo';
+
+}
+button {
+  text-align: center;
+}
+
+.questCard {
+  border:rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.4);
+  outline: 2px solid black;
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.questCard:hover {
+  box-shadow: 0 0 3px white;
+}
+.craftButton {
+  background: linear-gradient(40deg, #8006fc, #15bfd9);
+  background-color: rgba(0, 0, 0, 0.0);
+  padding: 15px;
+  color: cyan;
+  font-family: 'KoHo';
+  font-size: x-large;
+  position: absolute;
+  right: 30px;
+  top: 350px;
+  width: 200px;
+  border-style: solid;
+  border-width: 3px;
+  border-color:black;
+  outline: 2px;
+  outline-style: solid;
+  outline-color: linear-gradient(40deg, #8006fc, #15bfd9);
+  border-radius: 0;
+
+}
+
+.craftButton2 {
+  background: linear-gradient(40deg, #8006fc, #15bfd9);
+  padding: 15px;
+  color: cyan;
+  font-family: 'KoHo';
+  font-size: x-large;
+  position: absolute;
+  right: 30px;
+  top: 430px;
+  width: 200px;
+  border-style: solid;
+  border-width: 3px;
+  border-color:black;
+  outline: 2px;
+  outline-style: solid;
+  outline-color: linear-gradient(40deg, #8006fc, #15bfd9);
+  border-radius: 0;
+
+}
+.craftButton3 {
+  background: linear-gradient(40deg, #8006fc, #15bfd9);
+
+  padding: 15px;
+
+  color: cyan;
+  font-family: 'KoHo';
+  font-size: x-large;
+  
+  position: absolute;
+  right: 30px;
+  top: 510px;
+  width: 200px;
+  border-style: solid;
+  border-width: 3px;
+  border-color:black;
+  outline: 2px;
+  outline-style: solid;
+  outline-color: linear-gradient(40deg, #8006fc, #15bfd9);
+  border-radius: 0;
+
+}
+.craftButton4 {
+  background: linear-gradient(40deg, #8006fc, #15bfd9);
+  padding: 15px;
+
+  color: cyan;
+  font-family: 'KoHo';
+  font-size: medium;
+  
+  position: absolute;
+  right: 30px;
+  top: 590px;
+  width: 200px;
+  border-style: solid;
+  border-width: 3px;
+  border-color:black;
+  outline: 2px;
+  outline-style: solid;
+  outline-color: linear-gradient(40deg, #8006fc, #15bfd9);
+  border-radius: 0;
+
+}
+.craftButton5 {
+  background: linear-gradient(40deg, #8006fc, #15bfd9);
+  padding: 15px;
+
+  color: cyan;
+  font-family: 'KoHo';
+  font-size: medium;
+  
+  position: absolute;
+  right: 30px;
+  top: 670px;
+  width: 200px;
+  border-style: solid;
+  border-width: 3px;
+  border-color:black;
+  outline: 2px;
+  outline-style: solid;
+  outline-color: linear-gradient(40deg, #8006fc, #15bfd9);
+  border-radius: 0;
+
+}
+.lock{
+  position: absolute;
+  right: 250px;
+  top: 360px;
+}
+.lock2{
+  position: absolute;
+  right: 250px;
+  top: 520px;
+}
+.lock3{
+  position: absolute;
+  right:250px;
+  top: 600px;
+}
+
+
+.craftButton:hover {
+  box-shadow: 0 0 3px 5px white;
+  background: #282c34;
+}
+.craftButton2:hover {
+  box-shadow: 0 0 3px 5px white;
+  background: #282c34;
+}
+.craftButton3:hover {
+  box-shadow: 0 0 3px 5px white;
+  background: #282c34;
+}
+.craftButton4:hover {
+  box-shadow: 0 0 3px 5px white;
+  background: #282c34;
+}
+.craftButton5:hover {
+  box-shadow: 0 0 3px 5px white;
+  background: #282c34;
+}
+.InfoBox {
+  text-align: left;
+  color: greenyellow;
+  background-color: black;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0;
+}
+.homePic {
+  height: 400px;
+  width: 230px;
+  left: 0;
+  bottom: 30px;
+  position: absolute;
+}
+.questPic {
+  height: 120px;
+  width: 290px;
+  right: 0;
+  top: 400px;
+  position: absolute;
+}
+
+.homePicCenter {
+  height: 200px;
+  width: 400px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  left: 260px;
+  bottom: 500px;
+ 
+
+}
+button{
+  color: greenyellow;
+  background-color: black;
+  border-radius: 5px;
+}
+
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.tilepic {
+  background-image: url("./p_land_images/tileback.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  margin-left: 5px;
+}
+.tilepicBig {
+  background-image: url("./p_land_images/tileback.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+  margin-top: 20px;
+  height: 230px;
+  width: 230px;
+  display: flex;
+  align-self: center;
+}
+.column2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ 
+}
+.infoBlock {
+  background-color: rgba(36, 36, 36, 0.842);
+  border: black;
+  border-radius: 3%;
+  border-width: 2px;
+  border-style: dotted;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  align-self: center;
+  background-position: center;
+  margin: auto;
+}
+.infoBlock2 {
+  background-color: rgba(36, 36, 36, 0.842);
+  border: black;
+  border-radius: 3%;
+  border-width: 2px;
+  border-style: dotted;
+  height: 300px;
+  width: 400px;
+  padding: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  background-position: center;
+  margin: auto;
+}
+.popupper{
+  background-image: url("./p_land_images/a1f.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.popupperBook{
+  color: black;
+  margin-bottom: 20px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.inputSpec {
+  background-color: beige;
+  display: flex;
+  align-self: center;
+  margin: auto;
+}
+.faucetSpec {
+  border-radius: 20px;
+}
+.buttonpic {
+  background: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  color: white;
+  font-family: 'KoHo';
+  font-size: x-large;
+  margin: auto;
+  border-radius: 0;
+}
+.buyButton {
+  margin-top: 15px;
+}
+
+.buttonpicMenu {
+  background-image: url("./p_land_images/a1f.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  padding: 15px;
+  text-align: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  color: black;
+  font-family: 'KoHo';
+  font-size: x-large;
+  margin: auto;
+  width: 80px;
+}
+.tilepic:hover {
+  box-shadow: 5px 5px 10px white;
+}
+
+h2 {
+  font-family: 'KoHo';
+  font-size: x-large;
+}
+h3 {
+  font-family: 'KoHo';
+  font-size: large;
+}
+
+p {
+  font-family: 'KoHo';
+  font-size: medium;
+}
+
+
+.App-link {
+  color: #09d3ac;
+}
+
+.balance {
+  display: flex;
+  justify-self: baseline;
+}
+
+body{
+  display: flex;
+  background: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  flex-direction: column;
+  overflow:hidden;
+  text-align:center;
+  cursor: url("https://multiverse.com/cursors/pointer.png") 8 8, pointer;
+}
+.Main-Marketplace {
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  ),
+  url("./p_land_images/mp background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  flex-direction: column;
+  overflow:hidden;
+  text-align:center;
+  padding-bottom: 150px;
+}
+.Main-Character{
+  text-align: center;
+  background: url("./p_land_images/main.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position-x: center;
+  background-position-y: center;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  color: brown;
+  font-family: 'KoHo';
+
+}
+
+.HeaderBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  padding-top: 0;
+  margin-top: 0;
+
+  margin-bottom: -5px;
+  width: 90%;
+}
+
+.game{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .App2{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: 160px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .title {
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+    text-align: justify;
+    margin: auto;
+  }
+  .column {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    margin: auto;
+    padding: 5px;
+    
+  }
+  .HeaderBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: -150px;
+    width: 100%;
+  }
+  .popupper{
+    background-image: url("./p_land_images/a1dd.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: black;
+    padding: 10px;
+    margin-right: 250px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+  }
+  .popupper2{
+    background-image: url("./p_land_images/a1dd.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: black;
+    padding: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+  }
+  .columnPicUi {
+
+   width: 100%;
+   height: 100px;
+  }
+
+
+  body{
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("map3-5.png");
+    display: flex;
+    background-repeat: repeat-x;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    align-self: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    margin:0;
+    width: 100%;
+    color: white;
+    overflow: auto;
+    overflow-x: hidden;
+   
+  }
+  .Main{
+    text-align: center;
+    background: url("./p_land_images/map.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: 0;
+    padding: 4px;
+    color: white;
+    font-family: 'VCR';
+    overflow: auto;
+    width: 100%;
+  
+  }
+
+  input {
+    width: 50%;
+  }
+  .container{
+    width: 100%;
+  }
+  p{
+    font-size: small;
+  }
+  h2 {
+    font-family: 'KoHo';
+    font-size: medium;
+  }
+  h3 {
+    font-family: 'KoHo';
+    font-size: small;
+  }
+  .Book {
+   
+    background-image: url("./p_land_images/book.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    background-position-y: center;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  .tilepicBig {
+    background-image: url("./p_land_images/tileback.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2px;
+    margin-top: 2px;
+    height: 34px;
+    width: 34px;
+    display: flex;
+    align-self: center;
+  }
+  .recipeIcon {
+    display: flex;
+    align-self: center;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+  .centerpic {
+   display: flex;
+   align-self: center;
+  }
+  .rowSpecial {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-items: center;
+    flex-direction: row;
+  }
+
+
+  .inventoryColumn {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-items: center;
+    align-items: center;
+    text-align: left;
+    margin: 5px;
+    padding: 5px;
+  }
+  .artifact {
+    height: 70px;
+    width: 100px;
+    padding: 20px;
+    margin-bottom: 15px;
+   
+    margin: auto;
+    display: flex;
+    align-self: center;
+  }
+  .artifactGlow {
+    height: 70px;
+    width: 100px;
+    padding: 20px;
+    margin-bottom: 15px;
+    margin: auto;
+    display: flex;
+    align-self: center;
+    box-shadow: 3px 3px 5px whitesmoke;
+  }
+  .profilePic {
+    height: 100px;
+    width: 80px;
+  
+  }
+  
+  
+
+  .infoUi {
+    height: 30px;
+    width: 30px;
+    display: flex;
+  
+  }
+  
+  .infoUi2 {
+    display: flex;
+    background-image: url("./p_land_images/ui.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: 'KoHo';
+    font-size: small;
+    color: gold;
+    padding: 18px;
+    text-align: start;
+    width: 100%;
+    height: max-content;
+   
+  }
+  .mask{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 20px;
+    width: 20px;
+  }
+
+  
+  .headerRow {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    display: flex;
+    align-self: center;
+  }
+  .Book2 {
+    overflow: hidden;
+    background-image: url("./p_land_images/book.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    height: 600px;
+    width: 90%;
+    background-position-y: center;
+    background-position-x: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .infoBlock2 {
+    background-color: rgba(36, 36, 36, 0.842);
+    border: black;
+    border-radius: 3%;
+    border-width: 2px;
+    border-style: dotted;
+    height: 300px;
+    width: 85%;
+    padding: 2px;
+    margin: auto;
+    display: flex;
+    align-self: center;
+    justify-content: space-evenly;
+    background-position: center;
+    margin: auto;
+  }
+  .buttonpic {
+    background-image: url("./p_land_images/a1f.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    padding: 5px;
+    text-align: center;
+    align-content: center;
+    justify-self: center;
+    color: black;
+    font-family: 'VCR';
+    font-size: medium;
+    margin: auto;
+  }
+  .rowHeader {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+  .mainItemPic {
+    display: flex;
+    align-self: center;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-self: center;
+    padding: 5px;
+    margin:auto;
+  }
+
+  .rowOfThree {
+    margin-left: 0;
+    padding: 10px;
+  }
+  .crafting {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    align-self: center;
+    font-size: small;
+    margin-left: -10px;
+  }
+  .tilepic {
+    background-image: url("./p_land_images/tileback.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 3px;
+  }
+  .craftButton-mobile {
+    background: linear-gradient(40deg, #8006fc, #15bfd9);
+    background-color: rgba(0, 0, 0, 0.0);
+    padding: 15px;
+    color: cyan;
+    margin-top: 3px;
+    margin-bottom: 3px;
+   
+    text-align: center;
+    width: 60%;
+    font-family: 'VCR';
+    font-size: large;
+    border-style: solid;
+    border-width: 3px;
+    border-color:black;
+    outline: 2px;
+    outline-style: solid;
+    outline-color: linear-gradient(40deg, #8006fc, #15bfd9);
+    border-radius: 0;
+  
+  }
+  .Main-Quests{
+    text-align: center;
+    background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("map3-5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    color: brown;
+    font-family: 'VCR';
+    overflow-y: auto;
+  
+  }
+
+  .lockMobile {
+    height: 20px;
+    width: 20px;   
+    margin-right: 8px;
+  }
+  .rowMain {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-right: 28px;
+  }
+
+  
+  .Main-Character{
+    text-align: center;
+    background: url("./p_land_images/main.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    text-align: center;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    color: brown;
+    font-family: 'VCR';
+  
+  }
+
+  }
+  
